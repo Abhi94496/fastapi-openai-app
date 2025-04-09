@@ -1,0 +1,12 @@
+version: 0.0
+os: linux
+
+files:
+  - source: .
+    destination: /home/ubuntu/fastapi-openai-app
+
+hooks:
+  AfterInstall:
+    - location: scripts/restart_service.sh
+      timeout: 60
+      runas: ubuntu
